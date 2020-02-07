@@ -11,31 +11,39 @@ import { PLAYERS } from '../shared/players';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 
+import Home from './HomeComponent';
+import { Switch, Route, Redirect } from 'react-router-dom'
+
 class Main extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-        players: PLAYERS,
-        selectedDish: null
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            players: PLAYERS
+        };
+    }
 
-//   onDishSelect(dishId) {
-//     this.setState({ selectedDish: dishId});
-//   }
+    render() {
 
-  render() {
-    return (
-      <div>
-        <Header />
-        {/* <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} /> */}
-        {/* <DishDetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} /> */}
-        <MainTeamNews players={this.state.players} />
-        <Footer />
-      </div>
-    );
-  }
+        const HomePage = () => {
+            return ( <Home />);
+        }
+
+        return (
+            <div>
+                <Header />
+                <Switch>
+                    <Route path='/home' component={HomePage} />
+                    <Route exact path='/Team' component={() => <MainTeamNews players={this.state.players} />} />
+                    <Redirect to="/home" />
+                </Switch>
+                <Footer />
+                
+                {/* <MainTeamNews players={this.state.players} /> */}
+                
+            </div>
+        );
+    }
 }
 
 export default Main;

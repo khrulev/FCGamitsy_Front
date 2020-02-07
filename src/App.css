@@ -51,15 +51,15 @@
 }
 
 .footer{
-  background-color: #D1C4E9;
+  background-color: rgba(255, 166, 82, 0.199);
   margin:0px auto;
   padding: 20px 0px 20px 0px;
 }
 .jumbotron {
   padding:70px 30px 70px 30px;
   margin:0px auto;
-  background: #9575CD ;
-  color:floralwhite;
+  background: #ff8000 ;
+  color:#0f0f0f;
 }
 
 address{
@@ -68,6 +68,22 @@ address{
   color:#0f0f0f;
 }
 
-.navbar-dark {
-  background-color: #512DA8;
+.navbar-dark{
+  /* background-color: #ff8800; */
+  background-image: url(https://i.pinimg.com/originals/74/81/5e/74815ea10a870931fc82f9545c06746c.jpg);
+  /* background-image: url( https://w-dog.ru/wallpapers/3/10/329077288849295/liga-chempionov-lch-stadion-futbol-sport-pole.jpg); */
+
+  background-size: 100%; 
+  background-repeat: no-repeat;
 }
+
+
+.navbar-list a.chosen,
+.navbar-list a:hover {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.navbar-default .navbar-nav .navbar-dark {
+  color: rgb(255, 0, 0);
+}
+
