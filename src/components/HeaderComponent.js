@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import {
-    Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron,
-    Carousel,
+    Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem,
+    Carousel, 
     CarouselItem,
     CarouselControl,
     CarouselIndicators,
@@ -12,25 +12,28 @@ import { NavLink } from 'react-router-dom';
 const items = [
     {
         id: 1,
-        altText: 'Win On Tour 0 - 1!',
-        caption: 'Sumary',
+        altText: 'The Best',
+        captionHeader: 'FC GAMITSY',
+        captionText: 'welcome',
         src: './assets/images/slide1.jpg'
     },
     {
         id: 2,
-        altText: 'News',
-        caption: 'News',
+        altText: 'One team',
+        captionHeader: 'PLAY',
+        captionText: 'FOOTBAL',
         src: './assets/images/slide2.jpg'
     },
     {
         id: 3,
-        altText: 'Games',
-        caption: 'Games',
+        altText: "It's just",
+        captionHeader: "It's just",
+        captionText: 'A game',
         src: './assets/images/slide3.jpg'
     }
 ];
 
-const Example = (props) => {
+const SliderSet = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
 
@@ -53,10 +56,9 @@ const Example = (props) => {
 
     const slides = items.map((item) => {
         return (
-
             <CarouselItem
                 img={item.src}
-                className="custom-tag"
+                className="custom-tag drk"
                 tag="div"
                 key={item.id}
                 onExiting={() => setAnimating(true)}
@@ -65,15 +67,13 @@ const Example = (props) => {
                 <div class="overlay">
                     <img class="fluid" src={item.src} alt={item.altText} />
                 </div>
-                <CarouselCaption className="text-danger" captionText={item.caption} captionHeader={item.caption} />
-
+                <CarouselCaption captionText={item.captionText} captionHeader={item.captionHeader} />
             </CarouselItem>
-
         );
     });
 
     return (
-        <div>
+        // <div>
             <Carousel
                 activeIndex={activeIndex}
                 next={next}
@@ -83,8 +83,8 @@ const Example = (props) => {
                 {slides}
                 <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
                 <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-            </Carousel>
-        </div>
+            </Carousel> 
+        // </div>
     );
 }
 
@@ -107,12 +107,12 @@ class Header extends Component {
     render() {
         return (
             <div>
+            {/* <div className="row"> */}
+                {/* <div className="col-6 col-md-6"> */}
                 <Navbar class="nav-bar" dark expand="md">
                     <div className="container">
-
                         <NavbarToggler onClick={this.toggleNav} />
-
-                        <NavbarBrand className="mr-auto" href="/"><img src='./assets/images/fc_logo1.jpg' height="60" alt='FC Gamitsy' /></NavbarBrand>
+                        <NavbarBrand className="mr-auto" href="/"><img src='./assets/images/fc_logo1.jpg' height="30" alt='FC Gamitsy' /></NavbarBrand>
 
                         <div className="navbar-list">
                             <Collapse isOpen={this.state.isNavOpen} navbar>
@@ -134,18 +134,14 @@ class Header extends Component {
                         </div>
                     </div>
                 </Navbar>
-                {/* <Jumbotron> */}
-                {/* <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
-                                <h1>Football Club</h1>
-                                <p>The pride and winning tradition.</p>
-                            </div>
-                        </div>
-                    </div> */}
-                {/* <ControlledCarousel /> */}
-                {/* </Jumbotron> */}
-                <Example />
+                {/* </div> */}
+             {/* </div> */}
+            {/* //  <div className="row"> */}
+
+                {/* <div className="col-6 col-md-6"> */}
+                <SliderSet />
+                {/* </div> */}
+            {/* </div> */}
             </div>
         );
     }

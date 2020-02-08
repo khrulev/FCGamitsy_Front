@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 // import { Media } from 'reactstrap';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
-import logo from '../images/Main.logo.jpg';
 // import sample from '../video/bg1.mp4';
 
 class MainTeamNews extends Component {

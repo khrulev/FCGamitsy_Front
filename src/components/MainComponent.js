@@ -4,7 +4,6 @@ import { Navbar, NavbarBrand } from 'reactstrap';
 // import DishDetail from './DishdetailComponent';
 // import { DISHES } from '../shared/dishes';
 
-import logo from '../images/FC_logo.jpg';
 import MainTeamNews from './MainTeamNews';
 import { PLAYERS } from '../shared/players';
 
@@ -32,11 +31,12 @@ class Main extends Component {
         return (
             <div>
                 <Header />
-                <Switch>
+                {/* <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/Team' component={() => <MainTeamNews players={this.state.players} />} />
                     <Redirect to="/home" />
-                </Switch>
+                </Switch> */}
+                <Home />
                 <Footer />
                 
                 {/* <MainTeamNews players={this.state.players} /> */}
