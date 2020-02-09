@@ -189,4 +189,21 @@ address{
     /* opacity: 0.3; */
    height: 270px;
   }
+
+  #TeamHeader{
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .description-bottom {
+    min-height: 0px;
+    padding: 50px 0px 25px 0px;
+    border-bottom: 0px ridge;
+  }
+
+
+  .description-top {
+    min-height: 0px;
+    padding: 25px 0px 0px 0px;
+  }
   

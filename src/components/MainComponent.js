@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
-// import Menu from './MenuComponent';
-// import DishDetail from './DishdetailComponent';
-// import { DISHES } from '../shared/dishes';
-
-import MainTeamNews from './MainTeamNews';
-import { PLAYERS } from '../shared/players';
-
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
-
 import Home from './HomeComponent';
-import { Switch, Route, Redirect } from 'react-router-dom'
+import Team from './TeamComponent';
+import { PLAYERS } from '../shared/players';
+// import DishDetail from './DishdetailComponent';
+// import { Switch, Route, Redirect } from 'react-router-dom'
 
 class Main extends Component {
 
@@ -36,6 +30,7 @@ class Main extends Component {
                     <Route exact path='/Team' component={() => <MainTeamNews players={this.state.players} />} />
                     <Redirect to="/home" />
                 </Switch> */}
+                <Team players={this.state.players} />
                 <Home />
                 <Footer />
                 

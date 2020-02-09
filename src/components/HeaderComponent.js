@@ -73,7 +73,6 @@ const SliderSet = (props) => {
     });
 
     return (
-        // <div>
             <Carousel
                 activeIndex={activeIndex}
                 next={next}
@@ -84,7 +83,6 @@ const SliderSet = (props) => {
                 <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
                 <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
             </Carousel> 
-        // </div>
     );
 }
 
@@ -107,8 +105,6 @@ class Header extends Component {
     render() {
         return (
             <div>
-            {/* <div className="row"> */}
-                {/* <div className="col-6 col-md-6"> */}
                 <Navbar class="nav-bar" dark expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
@@ -124,7 +120,7 @@ class Header extends Component {
                                         <NavLink className="nav-link" to='/team'>TEAM</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink className="nav-link" to='/aboutus'>ABOUT US</NavLink>
+                                        <NavLink className="nav-link" to='/aboutus'>HISTORY</NavLink>
                                     </NavItem>
                                     <NavItem>
                                         <NavLink className="nav-link" to='/contactus'>CONTACTS</NavLink>
@@ -134,14 +130,7 @@ class Header extends Component {
                         </div>
                     </div>
                 </Navbar>
-                {/* </div> */}
-             {/* </div> */}
-            {/* //  <div className="row"> */}
-
-                {/* <div className="col-6 col-md-6"> */}
                 <SliderSet />
-                {/* </div> */}
-            {/* </div> */}
             </div>
         );
     }
