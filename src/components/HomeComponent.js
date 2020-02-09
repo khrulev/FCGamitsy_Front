@@ -6,7 +6,7 @@ class IntroYoutube extends React.Component {
     render() {
         const opts = {
             height: '340',
-            width: '440',
+            width: '100%',
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 autoplay: 0
             }
@@ -65,8 +65,8 @@ function Home() {
                             </CardBody>
                         </Card>
                     </div>
-                    <div className="d-sm-none d-lg-block col-12 col-md-4 offset-md-1">
-                        <IntroYoutube className="d-sm-none d-lg-block" />
+                    <div className="col-12 col-md-4 offset-md-1">
+                        <IntroYoutube id="Intro" />
                     </div>
                 </div>
             </div>

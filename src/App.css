@@ -75,8 +75,8 @@ address{
   /* background-color: #ff8800; */
   /* background-image: url(https://i.pinimg.com/originals/74/81/5e/74815ea10a870931fc82f9545c06746c.jpg); */
   /* background-image: url(http://lookw.ru/9/917/1566939530-5246-1920x1200.jpg); */
-  background-image: url( https://wallpapercave.com/wp/EVAxyMm.jpg ) ;
   /* background-image: url( https://w-dog.ru/wallpapers/3/10/329077288849295/liga-chempionov-lch-stadion-futbol-sport-pole.jpg); */
+  background-image: url( https://wallpapercave.com/wp/EVAxyMm.jpg ) ;
   background-size: 100%; 
   background-repeat: no-repeat;
 }
@@ -88,6 +88,7 @@ address{
 
 .navbar-default .navbar-nav .navbar-dark {
   color: rgb(255, 0, 0);
+  padding: 0rem 0rem;
 }
 
 .custom-tag { 
@@ -181,13 +182,7 @@ address{
   .home-block {
     background-image: url(https://im0-tub-ru.yandex.net/i?id=67921a5d21b35d4f57757c73ba65dc9c&n=13);
     background-repeat: no-repeat;
-    /* margin: 0px;
-    position: absolute; */
-
-    /* background: rgb(0, 0, 0); */
-    /* url('./assets/image/bg2.jpg'); */
-    /* opacity: 0.3; */
-   height: 270px;
+    height: 270px;
   }
 
   #TeamHeader{
@@ -201,9 +196,38 @@ address{
     border-bottom: 0px ridge;
   }
 
-
   .description-top {
     min-height: 0px;
     padding: 25px 0px 0px 0px;
   }
+
+  .submitLeft, .form-group{
+    text-align: left;
+  }
+
+  #submitForm {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  /* #Intro {
+    width: 360px;
+  }  */
+
+  .ramka {
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 600px) {
+    .ramka {
+      width: 150px; 
+      height: 150px; 
+      object-fit: cover;
+    }
+  } 
+  
+  
+
   

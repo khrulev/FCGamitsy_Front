@@ -33,7 +33,7 @@ const items = [
     }
 ];
 
-const SliderSet = (props) => {
+const SliderSet = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
 

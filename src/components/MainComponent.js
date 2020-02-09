@@ -3,8 +3,8 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Team from './TeamComponent';
+import Contact from './ContactComponent';
 import { PLAYERS } from '../shared/players';
-// import DishDetail from './DishdetailComponent';
 // import { Switch, Route, Redirect } from 'react-router-dom'
 
 class Main extends Component {
@@ -32,10 +32,8 @@ class Main extends Component {
                 </Switch> */}
                 <Team players={this.state.players} />
                 <Home />
+                <Contact />
                 <Footer />
-                
-                {/* <MainTeamNews players={this.state.players} /> */}
-                
             </div>
         );
     }
