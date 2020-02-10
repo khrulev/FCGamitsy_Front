@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, animateScroll as scroll } from "react-scroll";
+import { NavLink } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -9,10 +10,26 @@ function Footer() {
                     <div className="col-4 offset-1 col-md-2">
                         <h5>Links</h5>
                         <ul className="list-unstyled">
-                            <li><Link to='/home'>Home</Link></li>
-                            <li><Link to='/team'>Team</Link></li>
-                            <li><Link to='/aboutus'>About Us</Link></li>
-                            <li><Link to='/contactus'>Contact Us</Link></li>
+                             <li className="liLink">
+                                <NavLink className="nav-link" to='#home'> 
+                                    <Link to="home" spy={true} smooth={true} >Home</Link>
+                                </NavLink>
+                            </li>
+                            <li className="liLink">
+                                <NavLink className="nav-link" to='#team'> 
+                                    <Link to='team' spy={true} smooth={true}>Team</Link>
+                                </NavLink>
+                            </li>
+                            <li className="liLink">
+                                <NavLink className="nav-link" to='#history'> 
+                                    <Link to='history' spy={true} smooth={true}>History</Link>
+                                </NavLink>
+                            </li>
+                            <li className="liLink">
+                                <NavLink className="nav-link" to='#contact'> 
+                                    <Link to='contact' spy={true} smooth={true}>Contact Us</Link>
+                                </NavLink>
+                            </li>
                         </ul>
                     </div>
                     <div className="col-7 col-md-5">

@@ -29,7 +29,7 @@ class IntroYoutube extends React.Component {
 
 function Home() {
     return (
-        <div>
+        <div name="history">
             <div class="container-fluid">
                 <div className="row row-content description-bottom">
                     <div className="col-12 col-md-4 offset-md-1">

@@ -8,6 +8,7 @@ import {
     CarouselCaption
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const items = [
     {
@@ -104,7 +105,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div>
+            <div name="home" >
                 <Navbar class="nav-bar" dark expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
@@ -114,16 +115,28 @@ class Header extends Component {
                             <Collapse isOpen={this.state.isNavOpen} navbar>
                                 <Nav navbar>
                                     <NavItem>
-                                        <NavLink id="navbar_links" className="nav-link" to='/home'>HOME</NavLink>
+                                        {/* <NavLink id="navbar_links" className="nav-link" to='#home'>HOME</NavLink> */}
+                                        <NavLink className="nav-link" to='#home'> 
+                                            <Link to="home" spy={true} smooth={true}>HOME</Link>
+                                        </NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink className="nav-link" to='/team'>TEAM</NavLink>
+                                        {/* <NavLink className="nav-link" to='#team'>TEAM</NavLink> */}
+                                        <NavLink className="nav-link" to='#team'> 
+                                            <Link to="team" spy={true} smooth={true}>TEAM</Link>
+                                        </NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink className="nav-link" to='/aboutus'>HISTORY</NavLink>
+                                        {/* <NavLink className="nav-link" to='#history'>HISTORY</NavLink> */}
+                                        <NavLink className="nav-link" to='#history'> 
+                                            <Link to="history" spy={true} smooth={true}>HISTORY</Link>
+                                        </NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink className="nav-link" to='/contactus'>CONTACTS</NavLink>
+                                        {/* <NavLink className="nav-link" to='#contact'>CONTACTS</NavLink> */}
+                                        <NavLink className="nav-link" to='#contact'> 
+                                            <Link to="contact" spy={true} smooth={true}>CONTACTS</Link>
+                                        </NavLink>
                                     </NavItem>
                                 </Nav>
                             </Collapse>

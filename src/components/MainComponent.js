@@ -5,7 +5,6 @@ import Home from './HomeComponent';
 import Team from './TeamComponent';
 import Contact from './ContactComponent';
 import { PLAYERS } from '../shared/players';
-// import { Switch, Route, Redirect } from 'react-router-dom'
 
 class Main extends Component {
 
@@ -17,19 +16,9 @@ class Main extends Component {
     }
 
     render() {
-
-        const HomePage = () => {
-            return ( <Home />);
-        }
-
         return (
             <div>
                 <Header />
-                {/* <Switch>
-                    <Route path='/home' component={HomePage} />
-                    <Route exact path='/Team' component={() => <MainTeamNews players={this.state.players} />} />
-                    <Redirect to="/home" />
-                </Switch> */}
                 <Team players={this.state.players} />
                 <Home />
                 <Contact />

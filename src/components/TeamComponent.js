@@ -22,7 +22,7 @@ class Team extends Component {
     });
 
     return (
-      <div className="container">
+      <div name="team" className="container">
         <div className="row">
           <div className="col-12">
             <h2 id="TeamHeader">Our Team</h2>
