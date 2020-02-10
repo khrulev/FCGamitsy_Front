@@ -221,9 +221,9 @@ address{
     margin-left: 0px;
   }
 
-  /* #Intro {
-    width: 360px;
-  }  */
+  .foto-teams {
+    margin: 1rem!important;
+  }  
 
   .ramka {
     width: 300px; 
