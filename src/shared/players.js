@@ -41,5 +41,5 @@ export const PLAYERS =
         image: 'assets/images/player6.jpg',
         number: '5',
         amplua: 'Centerback',
-       },
+       }
     ];
