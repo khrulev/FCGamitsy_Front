@@ -4,22 +4,31 @@ import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Team from './TeamComponent';
 import Contact from './ContactComponent';
-import { PLAYERS } from '../shared/players';
+
+//import { PLAYERS } from '../shared/players';
+// import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return {
+    players: state.players
+  }
+}
 
 class Main extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            players: PLAYERS
-        };
+        // this.state = {
+        //     players: PLAYERS
+        // };
     }
 
     render() {
         return (
             <div>
                 <Header />
-                <Team players={this.state.players} />
+                <Team players={this.props.players} />               
                 <Home />
                 <Contact />
                 <Footer />
@@ -28,4 +37,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default (connect(mapStateToProps)(Main));
