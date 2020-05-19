@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Loading } from "./LoadingComponent";
 
 class Team extends Component {
 
@@ -7,7 +8,7 @@ class Team extends Component {
     super(props);
   }
 
-  render() {
+  render() {  
     const allTeam = this.props.players.map((player) => {
       return (
         <div className="col-12 col-md-3 foto-teams">
@@ -18,10 +19,18 @@ class Team extends Component {
             </CardImgOverlay>
           </Card>
         </div>
-      );
-    });
+      )
+    })
 
-    return (
+    if (this.props.isLoading) {
+      return (
+        <div className="container">
+          <div className="row">
+            <Loading />
+          </div>
+        </div>
+      )
+    } else return (
       <div name="team" className="container">
         <div className="row">
           <div className="col-12">

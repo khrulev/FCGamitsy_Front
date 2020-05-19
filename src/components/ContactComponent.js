@@ -2,12 +2,41 @@ import React, { Component } from 'react';
 //import { Button, Form, Label, Input, Col, Row } from 'reactstrap';
 import { Button, Row, Col, Label } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+// import { Fade } from 'react-animation-components';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
 const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+
+function RenderComments({comments, addComment}) {
+    if (comments) {
+        return (
+            <div className="col-12 m-1">
+                <h4>Comments</h4>
+                <ul className="list-unstyled" >
+                    {comments.map((comment) => {
+                        const options = { day: 'numeric', month: 'short', year: 'numeric' };
+                        const date = new Date(comment.date).toLocaleDateString('en-Us', options);
+                        return (
+                            <ul class="list-unstyled">
+                                {/* <Fade in> */}
+                                    <li>{comment.comment}</li>
+                                    <li> -- {comment.author}, {date}</li>
+                                    <li><br></br></li>
+                                {/* </Fade> */}
+                            </ul>
+                        )}
+                    )}
+                </ul>
+            </div>
+        );
+    } else 
+        return (
+            <div></div>
+        );
+}
 
 class Contact extends Component {
 
@@ -17,8 +46,9 @@ class Contact extends Component {
     }
 
     handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
-        alert('Thank you for your feedback! ' + JSON.stringify(values));
+        // console.log('Current State is: ' + JSON.stringify(values));
+         alert('Thank you for your feedback! ' + JSON.stringify(values));
+        this.props.addComment(values.firstname, values.message);
     }
 
     render() {
@@ -156,6 +186,9 @@ class Contact extends Component {
                         </Row>
                     </LocalForm>
                 </div>
+                {/* <div className="col-12"> */}
+                    <RenderComments comments={this.props.comments} addComment={this.props.addComment}/>
+                {/* </div> */}
             </div>
         );
     }

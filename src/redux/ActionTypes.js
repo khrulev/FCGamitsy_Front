@@ -1,0 +1,5 @@
+export const ADD_COMMENT = 'ADD_COMMENT';
+
+export const PLAYERS_LOADING = 'PLAYERS_LOADING';
+export const PLAYERS_FAILED = 'PLAYERS_FAILED';
+export const ADD_PLAYERS = 'ADD_PLAYERS';
