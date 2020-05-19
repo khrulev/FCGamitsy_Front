@@ -6,10 +6,12 @@ import Team from './TeamComponent';
 import Contact from './ContactComponent';
 import { connect } from 'react-redux';
 import { addComment, fetchPlayers } from '../redux/ActionCreators';
+import { actions } from 'react-redux-form';
 
 const mapDispatchToProps = dispatch => ({
     addComment: (author, comment) => dispatch(addComment(author, comment)),
-    fetchPlayers: () => {dispatch(fetchPlayers())}
+    fetchPlayers: () => {dispatch(fetchPlayers())},
+    resetFeedbackForm: () => {dispatch(actions.reset('feedback'))}
   });
 
 const mapStateToProps = state => {
@@ -39,7 +41,8 @@ class Main extends Component {
                 />               
                 <Home />
                 <Contact comments={this.props.comments}
-                        addComment={this.props.addComment} />
+                        addComment={this.props.addComment} 
+                        resetFeedbackForm={this.props.resetFeedbackForm} />
                 <Footer />
             </div>
         );

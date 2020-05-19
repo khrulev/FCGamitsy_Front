@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import { Button, Form, Label, Input, Col, Row } from 'reactstrap';
 import { Button, Row, Col, Label } from 'reactstrap';
-import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Control, Errors, Form, actions } from 'react-redux-form';
 // import { Fade } from 'react-animation-components';
 
 const required = (val) => val && val.length;
@@ -47,8 +47,9 @@ class Contact extends Component {
 
     handleSubmit(values) {
         // console.log('Current State is: ' + JSON.stringify(values));
-         alert('Thank you for your feedback! ' + JSON.stringify(values));
+        // alert('Thank you for your feedback! ' + JSON.stringify(values));
         this.props.addComment(values.firstname, values.message);
+        this.props.resetFeedbackForm();
     }
 
     render() {
@@ -58,7 +59,7 @@ class Contact extends Component {
                     <h3>Send Us Your Feedback</h3>
                 </div>
                 <div className="col-12 col-md-10 offset-md-1">
-                    <LocalForm model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
+                    <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
                         <Row className='form-group'>
                             <Label htmlFor="firstname" md={2}>First Name</Label>
                             <Col md={4}>
@@ -184,10 +185,13 @@ class Contact extends Component {
                                     </Button>
                             </Col>
                         </Row>
-                    </LocalForm>
+                    </Form>
                 </div>
                 {/* <div className="col-12"> */}
-                    <RenderComments comments={this.props.comments} addComment={this.props.addComment}/>
+                    <RenderComments 
+                        comments={this.props.comments} 
+                        addComment={this.props.addComment}
+                        />
                 {/* </div> */}
             </div>
         );
