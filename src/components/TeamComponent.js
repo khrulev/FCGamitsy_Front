@@ -13,7 +13,7 @@ class Team extends Component {
       return (
         <div className="col-12 col-md-4 foto-teams">
           <Card key={player.id}>
-            <CardImg className="ramka"  src={player.image} alt={player.name} />
+            <CardImg className="ramka img-shadow-1"  src={player.image} alt={player.name} />
             <CardImgOverlay>
               {/* <CardTitle>{player.name}</CardTitle> width="100%"*/}
             </CardImgOverlay>

@@ -36,11 +36,10 @@ function Footer() {
                         <h5>Our Address</h5>
                         <address>
                             Russia, Perm region<br />
-                            Osinkiy raion<br />
-                            Selo Gamitsy<br />
+                            Osa city<br />>
                             <i className="fa fa-phone fa-lg"></i>: +7 912 1111111<br />
                             <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:subz05@bk.ru">
-                                subz05@bk.ru</a>
+                                fcga@gmail.com</a>
                         </address>
                     </div>
                     <div className="col-12 col-md-4 align-self-center">
