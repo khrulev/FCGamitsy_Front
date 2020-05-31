@@ -13,9 +13,9 @@ const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val
 function RenderComments({comments, addComment}) {
     if (comments) {
         return (
-            <div className="col-12 m-1">
+            <div className="col-12 col-md9 offset-md-1">
                 <h4>Comments</h4>
-                <ul className="list-unstyled" >
+                <ul className="list-unstyled comments-text" >
                     {comments.map((comment) => {
                         const options = { day: 'numeric', month: 'short', year: 'numeric' };
                         const date = new Date(comment.date).toLocaleDateString('en-Us', options);
@@ -58,7 +58,7 @@ class Contact extends Component {
                 <div className="col-12">
                     <h3>Send Us Your Feedback</h3>
                 </div>
-                <div className="col-12 col-md-10 offset-md-1">
+                <div className="col-12 col-md-9 offset-md-4">
                     <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
                         <Row className='form-group'>
                             <Label htmlFor="firstname" md={2}>First Name</Label>
@@ -168,7 +168,7 @@ class Contact extends Component {
                         </Row>
                         <Row className='form-group'>
                             <Label htmlFor="message" md={2}>Your Feedback</Label>
-                            <Col md={10}>
+                            <Col md={4}>
                                 <Control.textarea 
                                     model=".message" 
                                     name="message" 
@@ -188,10 +188,10 @@ class Contact extends Component {
                     </Form>
                 </div>
                 {/* <div className="col-12"> */}
-                    <RenderComments 
+                    {/* <RenderComments 
                         comments={this.props.comments} 
                         addComment={this.props.addComment}
-                        />
+                        /> */}
                 {/* </div> */}
             </div>
         );

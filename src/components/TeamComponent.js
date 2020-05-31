@@ -11,7 +11,7 @@ class Team extends Component {
   render() {  
     const allTeam = this.props.players.map((player) => {
       return (
-        <div className="col-12 col-md-3 foto-teams">
+        <div className="col-12 col-md-4 foto-teams">
           <Card key={player.id}>
             <CardImg className="ramka"  src={player.image} alt={player.name} />
             <CardImgOverlay>
@@ -37,7 +37,7 @@ class Team extends Component {
             <h2 id="TeamHeader">Our Team</h2>
           </div>
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-between">
           {allTeam}
         </div>
       </div>

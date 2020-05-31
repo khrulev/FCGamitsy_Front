@@ -222,26 +222,38 @@ address{
   }
 
   .foto-teams {
-    margin: 1rem!important;
-  }  
+    /* margin: 1rem!important; */
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 30px;
+  } 
 
   .ramka {
-    width: 300px; 
-    height: 300px; 
+    width: 150px; 
+    height: 150px; 
     object-fit: cover;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (min-width: 600px) { 
     .ramka {
-      width: 150px; 
-      height: 150px; 
+      width: 300px; 
+      height: 300px; 
       object-fit: cover;
+      /* flex: 0 0 33%;
+      max-width: 33%;
+      max-height: 33%; */
     }
-  } 
+  }
 
   .liLink {
     height: 30px;
   }
+
+.comments-text {
+  text-align: left;
+}
   
   
 

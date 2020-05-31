@@ -5,7 +5,7 @@ import YouTube from 'react-youtube';
 class IntroYoutube extends React.Component {
     render() {
         const opts = {
-            height: '340',
+            height: '437.89',
             width: '100%',
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 autoplay: 0
@@ -30,16 +30,16 @@ class IntroYoutube extends React.Component {
 function Home() {
     return (
         <div name="history">
-            <div class="container-fluid">
+            <div class="container">
                 <div className="row row-content description-bottom">
-                    <div className="col-12 col-md-4 offset-md-1">
+                    <div className="col-12 col-md-6">
                         <h2>Our History</h2>
                         <p>Starting in 1996, FC "Gamitsy" quickly gained
                           popularity among the local boys and girls. Daily training
                           sessions led to the formation of the main players of the team.
                             The achievements of the team - prizes in a friendly and on the football games.</p>
                     </div>
-                    <div className="col-12 col-md-5 offset-md-1">
+                    <div className="col-12 col-md-6">
                         <Card>
                             <CardHeader id="CardStatistic" className="text-white">Facts At a Glance</CardHeader>
                             <CardBody>
@@ -54,7 +54,7 @@ function Home() {
                     </div>
                 </div>
                 <div className="row description-top">
-                    <div className="col-12 col-md-4 offset-md-1">
+                    <div className="col-12 col-md-6">
                         <Card className="tactical">
                             <CardImg width="100%" src='assets/images/tactical.jpg' />
                             <CardBody className="bg-faded">
@@ -65,7 +65,7 @@ function Home() {
                             </CardBody>
                         </Card>
                     </div>
-                    <div className="col-12 col-md-4 offset-md-1">
+                    <div className="col-12 col-md-6">
                         <IntroYoutube id="Intro" />
                     </div>
                 </div>
