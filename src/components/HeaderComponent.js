@@ -9,6 +9,11 @@ import {
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { Link, animateScroll as scroll } from "react-scroll";
+// import $ from 'jquery';
+// import slick from '../scripts/slick.min';
+import Slider from "react-slick";
+// @import "~slick-carousel/slick/slick.css";
+// @import "~slick-carousel/slick/slick-theme.css";
 
 const items = [
     {
@@ -35,57 +40,84 @@ const items = [
 ];
 
 const SliderSet = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [animating, setAnimating] = useState(false);
+    // const [activeIndex, setActiveIndex] = useState(0);
+    // const [animating, setAnimating] = useState(false);
 
-    const next = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-        setActiveIndex(nextIndex);
-    }
+    // const next = () => {
+    //     if (animating) return;
+    //     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    //     setActiveIndex(nextIndex);
+    // }
 
-    const previous = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-        setActiveIndex(nextIndex);
-    }
+    // const previous = () => {
+    //     if (animating) return;
+    //     const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    //     setActiveIndex(nextIndex);
+    // }
 
-    const goToIndex = (newIndex) => {
-        if (animating) return;
-        setActiveIndex(newIndex);
-    }
+    // const goToIndex = (newIndex) => {
+    //     if (animating) return;
+    //     setActiveIndex(newIndex);
+    // }
 
     const slides = items.map((item) => {
         return (
-            <CarouselItem
-                img={item.src}
-                className="custom-tag drk"
-                tag="div"
-                key={item.id}
-                onExiting={() => setAnimating(true)}
-                onExited={() => setAnimating(false)}
-            >
-                {/* <div class="overlay"> */}
-                    {/* <img class="fluid" src={item.src} alt={item.altText} /> */}
-                <div>
-                    <img  src={item.src} alt={item.altText} />
+            // <CarouselItem
+            //     img={item.src}
+            //     className="custom-tag drk"
+            //     tag="div"
+            //     key={item.id}
+            //     onExiting={() => setAnimating(true)}
+            //     onExited={() => setAnimating(false)}
+            // >
+                <div class="overlay"> 
+                     {/* // <img class="fluid" src={item.src} alt={item.altText} /> */}
+                    <div className="slider__item">
+                        <img  src={item.src} alt={item.altText} />
+                    </div>
                 </div>
-                <CarouselCaption captionText={item.captionText} captionHeader={item.captionHeader} />
-            </CarouselItem>
+                // <CarouselCaption captionText={item.captionText} captionHeader={item.captionHeader} />
+            // </CarouselItem>
         );
     });
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: false,
+        appendDots: dots => (
+            <div>
+              <ul style={{ 
+                  margin: "0 10px", 
+                  display: "flex", 
+                  'list-style-type': "none",
+                  'z-index': "99" }}> {dots} </ul>
+            </div>
+          ),
+          variableWidth: false
+    };
+               
     return (
-            <Carousel
-                activeIndex={activeIndex}
-                next={next}
-                previous={previous}
-            >
-                <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+        <div className="slider">
+            <Slider {...settings}>
                 {slides}
-                <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-                <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-            </Carousel> 
+            </Slider>
+        </div>
+            // <Carousel
+            //     activeIndex={activeIndex}
+            //     next={next}
+            //     previous={previous}
+            // >
+            //     <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+            //     {slides}
+            //     <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+            //     <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+            // </Carousel>
+            
     );
 }
 
