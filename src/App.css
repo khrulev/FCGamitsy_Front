@@ -138,14 +138,14 @@ address{
   align-items: center;
 }
 
-.overlay {
+/* .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   background: #000;
   opacity: 1;
   transition: all 2s ease-out;
-}
+} */
 
 .carousel-caption {
     margin-bottom: 20%;
@@ -238,7 +238,7 @@ address{
   } 
 
   .ramka {
-    width: 150px; 
+    /* width: 150px;  */
     height: 150px; 
     object-fit: cover;
   }

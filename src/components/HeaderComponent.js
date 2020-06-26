@@ -65,8 +65,10 @@ const SliderSet = () => {
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
             >
-                <div class="overlay">
-                    <img class="fluid" src={item.src} alt={item.altText} />
+                {/* <div class="overlay"> */}
+                    {/* <img class="fluid" src={item.src} alt={item.altText} /> */}
+                <div>
+                    <img  src={item.src} alt={item.altText} />
                 </div>
                 <CarouselCaption captionText={item.captionText} captionHeader={item.captionHeader} />
             </CarouselItem>

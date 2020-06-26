@@ -186,9 +186,11 @@ class Contact extends Component {
                         </Row>
                         <Row className='form-group'>
                             <Col className='submitLeft' md={{ size: 10, offset: 2 }}>
-                                <Button type="submit" color="warning">
-                                    Send Feedback
+                               {/* <div className="row justify-content-start mb-4">  */}
+                                    <Button type="submit" color="warning">
+                                        Send Feedback
                                     </Button>
+                                {/* </div>  */}
                             </Col>
                         </Row>
                     </Form>
