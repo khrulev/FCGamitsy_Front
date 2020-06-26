@@ -106,7 +106,7 @@ class Header extends Component {
     render() {
         return (
             <div name="home" >
-                <Navbar class="nav-bar" dark expand="md">
+                <Navbar id="navi" class="nav-bar" dark expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto" href="/"><img src='./assets/images/fc_logo1.jpg' height="30" alt='FC Gamitsy' /></NavbarBrand>

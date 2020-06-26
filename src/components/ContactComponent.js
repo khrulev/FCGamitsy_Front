@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import { Button, Form, Label, Input, Col, Row } from 'reactstrap';
 import { Button, Row, Col, Label } from 'reactstrap';
 import { Control, Errors, Form, actions } from 'react-redux-form';
-// import { Fade } from 'react-animation-components';
+import { Fade } from 'react-animation-components';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -21,11 +21,16 @@ function RenderComments({comments, addComment}) {
                         const date = new Date(comment.date).toLocaleDateString('en-Us', options);
                         return (
                             <ul class="list-unstyled">
-                                {/* <Fade in> */}
-                                    <li>{comment.comment}</li>
-                                    <li> -- {comment.author}, {date}</li>
-                                    <li><br></br></li>
-                                {/* </Fade> */}
+                                <Fade in>
+                                <li class="media">
+                                    <img src="https://yt3.ggpht.com/a/AGF-l7_KVyuiY0btstoTirAqjnQyPwC6mB9y8CfwJg=s900-c-k-c0xffffffff-no-rj-mo" class="mr-3" alt="author" />
+                                    <div class="media-body">
+                                        <h5 class="mt-0">{comment.author}, {date}</h5>
+                                        {comment.comment}
+                                    </div>
+                                </li> 
+                                <li><br></br></li>
+                                </Fade>
                             </ul>
                         )}
                     )}
@@ -54,15 +59,16 @@ class Contact extends Component {
 
     render() {
         return (
+            <div className="container">
             <div name="contact" id="submitForm" className="row row-content" >
                 <div className="col-12">
                     <h3>Send Us Your Feedback</h3>
                 </div>
-                <div className="col-12 col-md-9 offset-md-4">
+                <div className="col-12">
                     <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
                         <Row className='form-group'>
                             <Label htmlFor="firstname" md={2}>First Name</Label>
-                            <Col md={4}>
+                            <Col md={10}>
                                 <Control.text model=".firstname" name="firstname" 
                                 id="firstname" 
                                 className="form-control"
@@ -86,7 +92,7 @@ class Contact extends Component {
                         </Row>
                         <Row className='form-group'>
                             <Label htmlFor="lastname" md={2}>Last Name</Label>
-                            <Col md={4}>
+                            <Col md={10}>
                                 <Control.text model=".lastname" 
                                 name="lastname" 
                                 id="lastname" 
@@ -110,7 +116,7 @@ class Contact extends Component {
                         </Row>
                         <Row className='form-group'>
                             <Label htmlFor="telnum" md={2}>Tel.</Label>
-                            <Col md={4}>
+                            <Col md={10}>
                                 <Control.text model=".telnum" 
                                 name="telnum" 
                                 id="telnum" 
@@ -134,7 +140,7 @@ class Contact extends Component {
                         </Row>
                         <Row className='form-group'>
                             <Label htmlFor="email" md={2}>Email</Label>
-                            <Col md={4}>
+                            <Col md={10}>
                                 <Control.text model=".email" 
                                 name="email" 
                                 id="email"
@@ -155,7 +161,7 @@ class Contact extends Component {
                             </Col>
                         </Row>
                         <Row className='form-group'>
-                            <Col className='submitLeft' md={{ size: 6, offset: 2 }}>
+                            <Col className='submitLeft' md={{ size: 10, offset: 2 }}>
                                 <div className="form-check">
                                     <Label check>
                                         <Control.checkbox model=".agree" 
@@ -168,7 +174,7 @@ class Contact extends Component {
                         </Row>
                         <Row className='form-group'>
                             <Label htmlFor="message" md={2}>Your Feedback</Label>
-                            <Col md={4}>
+                            <Col md={10}>
                                 <Control.textarea 
                                     model=".message" 
                                     name="message" 
@@ -179,7 +185,7 @@ class Contact extends Component {
                             </Col>
                         </Row>
                         <Row className='form-group'>
-                            <Col className='submitLeft' md={{ size: 2, offset: 2 }}>
+                            <Col className='submitLeft' md={{ size: 10, offset: 2 }}>
                                 <Button type="submit" color="warning">
                                     Send Feedback
                                     </Button>
@@ -187,12 +193,15 @@ class Contact extends Component {
                         </Row>
                     </Form>
                 </div>
-                {/* <div className="col-12"> */}
-                    {/* <RenderComments 
+
+                <div className="col-12">
+                    <RenderComments 
                         comments={this.props.comments} 
                         addComment={this.props.addComment}
-                        /> */}
-                {/* </div> */}
+                        /> 
+                </div>
+
+            </div>
             </div>
         );
     }

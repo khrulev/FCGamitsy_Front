@@ -72,13 +72,16 @@ address{
 }
 
 .navbar-dark{
+  position: absolute;
   /* background-color: #ff8800; */
   /* background-image: url(https://i.pinimg.com/originals/74/81/5e/74815ea10a870931fc82f9545c06746c.jpg); */
   /* background-image: url(http://lookw.ru/9/917/1566939530-5246-1920x1200.jpg); */
   /* background-image: url( https://w-dog.ru/wallpapers/3/10/329077288849295/liga-chempionov-lch-stadion-futbol-sport-pole.jpg); */
-  background-image: url( https://wallpapercave.com/wp/EVAxyMm.jpg ) ;
+  /* background-image: url( https://wallpapercave.com/wp/EVAxyMm.jpg ) ; */
   background-size: 100%; 
   background-repeat: no-repeat;
+  background-color: transparent;
+  z-index: 1000;
 }
 
 .navbar-list a.chosen,
@@ -89,6 +92,10 @@ address{
 .navbar-default .navbar-nav .navbar-dark {
   color: rgb(255, 0, 0);
   padding: 0rem 0rem;
+}
+
+#navi{
+  position: absolute; 
 }
 
 .custom-tag { 
@@ -257,6 +264,11 @@ address{
 
 .img-shadow-1 {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+
+.media img {
+  max-width: 36px;
 }
   
   
