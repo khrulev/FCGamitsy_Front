@@ -1,5 +1,6 @@
 {
   "name": "football",
+  "homepage": "https://khrulev.github.io/FCGF/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
