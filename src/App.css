@@ -11,6 +11,24 @@
   pointer-events: none;
 }
 
+
+.navbar__logo1 {
+  width: 35px;
+  height: 50px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.logo1__img {
+  border-radius: 50%;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -90,7 +108,9 @@ address{
 
 .navbar-list a.chosen,
 .navbar-list a:hover {
-  border-bottom: 1px solid rgb(0, 0, 0);
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  opacity: 0.6;
+  transition: all .15s linear
 }
 
 .navbar-default .navbar-nav .navbar-dark {
@@ -98,8 +118,14 @@ address{
   padding: 0rem 0rem;
 }
 
+#navbar__navi {
+  align-items: start;
+}
+
+
 #navi{
-  position: absolute; 
+  position: absolute;
+  width: 100%; 
 }
 
 .nav-item {
@@ -360,10 +386,85 @@ address{
   opacity: 0.5;
 }
 
-.overlay {
+.slider__overlay {
   width: 100%;
   height: 100%;
   background: #000;
   opacity: 1;
   /* transition: all 2s ease-out;  */
 }
+
+/* .slider__item .h3{
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  font-size: 90px;
+  z-index: 999;
+  color: #fff;
+  text-transform: uppercase;
+} */
+
+#adress{
+  margin-bottom: 80px;
+}
+
+/******* scroll down **********/
+
+.slider__scrollDown {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  /* background: #fff; */
+  transform: translateY(-80px) translateX(-50%) rotate(45deg);
+  z-index: 99;
+
+}
+
+.slider__scrollDown span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display:  block;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  animation: animate 1.5s linear infinite;
+  opacity: 0;
+
+}
+
+.slider__scrollDown span:nth-child(1){
+ transform: translate(-15px, -15px);
+ animation-delay: -0.4s;
+}
+
+.slider__scrollDown span:nth-child(2){
+  transform: translate(0px, 0px);
+  animation-delay: -0.2s;
+ }
+
+ .slider__scrollDown span:nth-child(3){
+  transform: translate(15px, 15px);
+  animation-delay: 0s;
+ }
+
+ @keyframes animate {
+   0% {
+    top: -5px;
+    left: -5px;
+    opacity: 0;
+   }
+   25% {
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+   }
+   50%,100% {
+    top: 5px;
+    left: 5px;
+    opacity: 0;
+   }
+ }

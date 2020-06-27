@@ -32,7 +32,7 @@ function Footer() {
                             </li>
                         </ul>
                     </div>
-                    <div className="col-7 col-md-5">
+                    <div id="adress" className="col-7 col-md-5 ">
                         <h5>Our Address</h5>
                         <address>
                             Russia, Perm region<br />

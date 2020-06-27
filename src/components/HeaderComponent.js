@@ -70,10 +70,12 @@ const SliderSet = () => {
             //     onExiting={() => setAnimating(true)}
             //     onExited={() => setAnimating(false)}
             // >
-                <div class="overlay"> 
+                <div class="slider__overlay"> 
                      {/* // <img class="fluid" src={item.src} alt={item.altText} /> */}
                     <div className="slider__item">
                         <img  src={item.src} alt={item.altText} />
+                        {/* <div className="h3">{item.captionHeader}</div>
+                        <div className="regular">{item.captionText}</div> */}
                     </div>
                 </div>
                 // <CarouselCaption captionText={item.captionText} captionHeader={item.captionHeader} />
@@ -95,7 +97,9 @@ const SliderSet = () => {
                   margin: "0 10px", 
                   display: "flex", 
                   'list-style-type': "none",
-                  'z-index': "99" }}> {dots} </ul>
+                  'z-index': "99" }}> 
+                  {dots} 
+                </ul>
             </div>
           ),
           variableWidth: false
@@ -106,7 +110,13 @@ const SliderSet = () => {
             <Slider {...settings}>
                 {slides}
             </Slider>
+            <div className="slider__scrollDown">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+
             // <Carousel
             //     activeIndex={activeIndex}
             //     next={next}
@@ -141,10 +151,12 @@ class Header extends Component {
         return (
             <div name="home" >
                 <Navbar id="navi" class="nav-bar" dark expand="md">
-                    <div className="container">
-                        <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto" href="/"><img src='./assets/images/fc_logo1.jpg' height="30" alt='FC Gamitsy' /></NavbarBrand>
-
+                    <div id="navbar__navi" className="container">
+                        <NavbarBrand className="mr-auto" href="/">
+                            <div class="navbar__logo1">
+                                <img className="logo1__img" src='./assets/images/fc_logo1.jpg' height="45" alt='FC Gamitsy' />
+                            </div>    
+                        </NavbarBrand>
                         <div className="navbar-list">
                             <Collapse isOpen={this.state.isNavOpen} navbar>
                                 <Nav navbar>
@@ -175,6 +187,7 @@ class Header extends Component {
                                 </Nav>
                             </Collapse>
                         </div>
+                        <NavbarToggler onClick={this.toggleNav} />
                     </div>
                 </Navbar>
                 <SliderSet />
